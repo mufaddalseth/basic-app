@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}{% endblock %}</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    {% bootstrap_javascript %}
+    <style>
+        .navbar {
+            padding-left: 30px;
+            font-size: larger;
+            background-color: #008080; /* Specify the desired background color */
+
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+      
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'history' %}">Vector</a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="createDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Create
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="createDropdown">
+                        <li><a class="dropdown-item" href="{% url 'courses' %}">Courses</a></li>
+                        <li><a class="dropdown-item" href="{% url 'courses' %}">Trainer</a></li>
+                        <li><a class="dropdown-item" href="{% url 'courses' %}">Sub-Category</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'list' %}">Course List</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="createDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Edit
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="createDropdown">
+                        <li><a class="dropdown-item" href="{% url 'list' %}">Courses</a></li>
+                        <li><a class="dropdown-item" href="{% url 'list' %}">Trainer</a></li>
+                        <li><a class="dropdown-item" href="{% url 'list' %}">Sub-Category</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+</body>
+
+</html>

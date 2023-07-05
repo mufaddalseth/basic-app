@@ -1,0 +1,44 @@
+{% extends "home.html" %}
+{% block title %}
+Courses List
+{% endblock %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% block content %}
+<h1>Courses List</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Application</th>
+        <th>Fees</th>
+        <th>Duration</th>
+        <th>Upload Course Image</th>
+        <th>Action</th>
+    </tr>
+    {% for f in form %}
+    <tr>
+        <!-- <td><a href="{%url 'edit' f.id%}">{{f.name}}</a></td> -->
+        <td>{{f.name}}</td>
+        <td>{{f.description}}</td>
+        <td>{{f.application}}</td>
+        <td>{{f.fees}}</td>
+        <td>{{f.duration}}</td>
+
+        <td>
+            <img src="{{f.image.url}}" width=40px alt="Course Image">
+        </td>
+        <td>
+            <a class="btn btn-danger"  href="{% url 'delete' f.id %}">Delete</a>   
+
+        </td>
+        
+    </tr>
+    {% endfor %}
+    <!-- Add more rows for each course -->
+</table>
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "home.html" %}
+{% block title %}
+Courses List
+{% endblock %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% block content %}
+<ul>
+    <form method="post" action="{% url 'courses' %}" enctype="multipart/form-data">
+        {% csrf_token%}
+        <h3>Create - Course</h3>
+        <!-- {{form.as_ul}} -->
+        <div>
+            <table>
+                <caption>
+                    Please ensure that all the values provided in the form are correct
+                </caption>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Application</th>
+                        <th>Fees</th>
+                        <th>Duration</th>
+                        <th>Unload Course Image</th>
+                    </tr>
+                    <tr>
+                        <td>{{form.name}}</td>
+                        <td>{{form.description}}</td>
+                        <td>{{form.application}}</td>
+                        <td>{{form.fees}}</td>
+                        <td>{{form.duration}}</td>
+                        <td>{{form.image}}</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <button class="bg-light" type="submit">Submit</button>
+    </form>
+</ul>
+{% endblock %}

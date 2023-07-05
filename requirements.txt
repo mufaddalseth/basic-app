@@ -1,0 +1,16 @@
+asgiref  
+beautifulsoup4
+Django  
+django-bootstrap-v5
+django-debug-toolbar
+django-extensions
+django-js-lib-bootstrap5
+install
+mysql-connector
+Pillow
+pip
+setuptools
+soupsieve
+sqlparse
+typing_extensions
+tzdata
