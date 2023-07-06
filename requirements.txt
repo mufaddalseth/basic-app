@@ -15,4 +15,5 @@ sqlparse
 typing_extensions
 tzdata
 gunicorn
+--upgrade pip
 learning_section
