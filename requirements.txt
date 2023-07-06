@@ -15,4 +15,4 @@ sqlparse
 typing_extensions
 tzdata
 gunicorn
-learning_platform
+learning_section
