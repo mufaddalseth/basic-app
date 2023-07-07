@@ -27,6 +27,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # Below path is for toolbar
     path('__debug__/',include(debug_toolbar.urls)),
+    path('', include("courses_section.urls")), 
+
     # Below path is for Application 1 - courses_section
     path('courses/', include("courses_section.urls")), 
 ] +  static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
